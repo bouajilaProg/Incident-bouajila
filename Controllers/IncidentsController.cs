@@ -93,3 +93,28 @@ namespace tp1.Controllers
             _incidents.Remove(incident);
             return NoContent();
         }
+
+        [HttpGet("FilterBySeverity/{severity}")]
+        public IActionResult FilterIncidentsBySeverity(string severity)
+        {
+            var filteredIncidents = _incidents.Where(i => i.Severity.ToUpper().Contains(severity.ToUpper())).ToList();
+            if (filteredIncidents.Count == 0)
+            {
+                return NotFound();
+            }
+            return Ok(filteredIncidents);
+        }
+
+        [HttpGet("FilterByStatus/{status}")]
+        public IActionResult FilterIncidentsByStatus(string status)
+        {
+            var filteredIncidents = _incidents.Where(i => i.Status.ToUpper().Contains(status.ToUpper())).ToList();
+            if (filteredIncidents.Count == 0)
+            {
+                return NotFound();
+            }
+            return Ok(filteredIncidents);
+        }
+
+    }
+}
