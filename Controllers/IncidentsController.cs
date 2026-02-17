@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using tp1.Models;
+using Bouajila.Incidents.Api.Models;
 
 
-namespace tp1.Controllers
+namespace Bouajila.Incidents.Api.Controllers
 {
 
     [ApiController]
