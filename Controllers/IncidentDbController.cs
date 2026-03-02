@@ -110,4 +110,22 @@ public class IncidentDbController : ControllerBase
         return incidents;
     }
 
+
+    [HttpGet("FilterBySeverity/{severity}")]
+    public ActionResult<IEnumerable<Incident>> FilterBySeverity(string severity)
+    {
+        var incidents = (from i in _context.Incidents
+                         where i.Severity.Contains(severity)
+                         select i).ToList();
+
+        if (incidents == null || incidents.Count == 0)
+        {
+            return NotFound();
+        }
+        return incidents;
+    }
+
+
+
+
 }
