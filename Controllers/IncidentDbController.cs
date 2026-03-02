@@ -139,6 +139,18 @@ public class IncidentDbController : ControllerBase
         return incidents;
     }
 
+    [HttpGet("FilterBySeverityAsync/{severity}")]
+    public async Task<ActionResult<IEnumerable<Incident>>> FilterBySeverityAsync(string severity)
+    {
+        var incidents = _context.Incidents.Where(i => i.Severity.Contains(severity)).ToListAsync();
+
+        if (incidents == null || incidents.Result.Count == 0)
+        {
+            return NotFound();
+        }
+        return incidents.Result;
+    }
+
 
 
 
