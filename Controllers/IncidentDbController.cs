@@ -95,4 +95,19 @@ public class IncidentDbController : ControllerBase
     {
         return _context.Incidents.Any(e => e.Id == id);
     }
+
+
+    [HttpGet("FilterByStatus/{status}")]
+    public ActionResult<IEnumerable<Incident>> FilterByStatus(string status)
+    {
+        var incidents = (from i in _context.Incidents
+                         where i.Status.Contains(status)
+                         select i).ToList();
+        if (incidents == null || incidents.Count == 0)
+        {
+            return NotFound();
+        }
+        return incidents;
+    }
+
 }
