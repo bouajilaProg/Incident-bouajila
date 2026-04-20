@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/Incident-bouajila/">
+    <Project Path="Incident-bouajila/tp1.csproj" />
+  </Folder>
+  <Project Path="AppTests/AppTests.csproj" />
+</Solution>
