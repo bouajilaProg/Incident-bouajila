@@ -1,6 +1,0 @@
-<Solution>
-  <Folder Name="/Incident-bouajila/">
-    <Project Path="src/tp1.csproj" />
-  </Folder>
-  <Project Path="AppTests/AppTests.csproj" />
-</Solution>

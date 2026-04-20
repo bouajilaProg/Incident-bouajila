@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Incident-bouajila\tp1.csproj" />
+    <ProjectReference Include="..\src\tp1.csproj" />
   </ItemGroup>
 
 </Project>
